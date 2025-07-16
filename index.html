@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Sell Your Car for Cash</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
     <header>
         <h1>Sell Your Car for Cash</h1>
-        <p>Fast and easy, get an offer today!</p>
+        <p>Fast and easy – get a cash offer today!</p>
     </header>
 
     <main>
         <section id="form-section">
             <h2>Get a Free Offer</h2>
-            <form action="https://formsubmit.co/jmpcashforcars@gmail.com" method="POST">
-                <input type="text" name="_honey" style="display:none">
+            <form action="https://formsubmit.co/jmpcashforcars@gmail.com" method="POST" enctype="multipart/form-data">
+                <!-- Hidden setup fields -->
                 <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
                 <input type="hidden" name="_next" value="https://jmpcars.github.io/jmpcashforcars/thank-you.html">
+                <input type="text" name="_honey" style="display:none">
 
-                <label for="name">Name:</label>
+                <!-- Form Fields -->
+                <label for="name">Full Name:</label>
                 <input type="text" id="name" name="name" required>
 
                 <label for="phone">Phone Number:</label>
@@ -41,13 +44,13 @@
                 <label for="condition">Condition:</label>
                 <input type="text" id="condition" name="condition" required>
 
-                <label for="location">Your Location:</label>
+                <label for="location">Your City:</label>
                 <input type="text" id="location" name="location" required>
 
                 <label for="photos">Upload Photos:</label>
                 <input type="file" id="photos" name="photos" accept="image/*" multiple>
 
-                <button type="submit">Submit</button>
+                <button type="submit">Submit Offer</button>
             </form>
         </section>
 
@@ -55,8 +58,8 @@
             <h2>How It Works</h2>
             <ol>
                 <li>Fill out the form</li>
-                <li>Get a call/text with a cash offer</li>
-                <li>We pick up and pay you</li>
+                <li>Get a text or call with a cash offer</li>
+                <li>We pick up your car and pay you</li>
             </ol>
         </section>
 
@@ -65,7 +68,7 @@
             <ul>
                 <li>Fast and Friendly Service</li>
                 <li>Free Pickup in Southern California</li>
-                <li>We Buy Running and Well-Maintained Cars</li>
+                <li>We Buy Running, Well-Maintained Vehicles</li>
             </ul>
         </section>
     </main>
