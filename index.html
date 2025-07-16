@@ -46,5 +46,46 @@
                 <label for="location">Your City:</label>
                 <input type="text" id="location" name="location" required>
 
-                <label for="photos">Upload Photos:</label>
-                <input type="file" id="photos" name="photos[]" acce
+                <label for="photos">Upload Photos (One Photo Only):</label>
+                <input type="file" id="photos" name="photos" accept="image/*" multiple>
+
+                <button type="submit">Submit Offer</button>
+            </form>
+        </section>
+
+        <section id="how-it-works">
+            <h2>How It Works</h2>
+            <ol>
+                <li>Fill out the form</li>
+                <li>Get a text or call with a cash offer</li>
+                <li>We pick up your car and pay you</li>
+            </ol>
+        </section>
+
+        <section id="why-choose-us">
+            <h2>Why Choose JMP?</h2>
+            <ul>
+                <li>Fast and Friendly Service</li>
+                <li>Free Pickup in Southern California</li>
+                <li>We Buy Running, Well-Maintained Vehicles</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Contact: (714) 631-0322 | Email: jmpcashforcars@gmail.com</p>
+    </footer>
+
+    <!-- ✅ Confirmation Popup Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.querySelector("form");
+            form.addEventListener("submit", function () {
+                setTimeout(() => {
+                    alert("✅ Thank you! Your request was submitted. We'll contact you soon.");
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>
