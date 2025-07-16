@@ -76,5 +76,17 @@
     <footer>
         <p>Contact: (714) 631-0322 | Email: jmpcashforcars@gmail.com</p>
     </footer>
+
+    <!-- ✅ Confirmation Popup Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.querySelector("form");
+            form.addEventListener("submit", function () {
+                setTimeout(() => {
+                    alert("✅ Thank you! Your request was submitted. We'll contact you soon.");
+                }, 300);
+            });
+        });
+    </script>
 </body>
 </html>
