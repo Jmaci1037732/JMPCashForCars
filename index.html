@@ -1,88 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Sell Your Car for Cash</title>
-    <link rel="stylesheet" href="styles.css"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JMP Cash for Cars</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  .language-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: #005bbb;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+  }
+  .language-toggle:hover {
+    background: #004499;
+  }
+</style>
 </head>
 <body>
-    <!-- Company Name Blue Banner -->
-    <header>
-        <h1>JMP</h1>
-        <p>Contact: (714) 631-0322 | Email: jmpcashforcars@gmail.com</p>
-    </header>
 
-    <main>
-        <section id="form-section">
-            <h2>Get an Offer Today</h2>
-            <form action="https://formsubmit.co/jmpcashforcars@gmail.com" method="POST" enctype="multipart/form-data">
-                <!-- Hidden setup fields -->
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_template" value="table">
-                <input type="text" name="_honey" style="display:none">
+<!-- Language Toggle Button -->
+<button class="language-toggle" onclick="toggleLanguage()">Español</button>
 
-                <!-- Form Fields -->
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required>
+<!-- Your Original Content -->
+<h1 style="text-align:center;">JMP</h1>
+<h2 style="text-align:center;">Cash for Cars</h2>
+<p style="text-align:center;">We buy cars for cash fast! Call us today.</p>
 
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" required>
+<!-- Example Contact Info -->
+<p style="text-align:center;">Phone: (123) 456-7890</p>
+<p style="text-align:center;">Email: info@jmpcashforcars.com</p>
 
-                <label for="make">Car Make:</label>
-                <input type="text" id="make" name="make" required>
+<script>
+let currentLang = 'en';
+const translations = {
+  es: {
+    "JMP": "JMP",
+    "Cash for Cars": "Dinero por Autos",
+    "We buy cars for cash fast! Call us today.": "¡Compramos autos por dinero rápido! Llámanos hoy.",
+    "Phone: (123) 456-7890": "Teléfono: (123) 456-7890",
+    "Email: info@jmpcashforcars.com": "Correo: info@jmpcashforcars.com"
+  },
+  en: {
+    "JMP": "JMP",
+    "Cash for Cars": "Cash for Cars",
+    "We buy cars for cash fast! Call us today.": "We buy cars for cash fast! Call us today.",
+    "Phone: (123) 456-7890": "Phone: (123) 456-7890",
+    "Email: info@jmpcashforcars.com": "Email: info@jmpcashforcars.com"
+  }
+};
 
-                <label for="model">Car Model:</label>
-                <input type="text" id="model" name="model" required>
+function toggleLanguage() {
+  const elements = document.querySelectorAll("h1, h2, p");
+  currentLang = currentLang === 'en' ? 'es' : 'en';
+  document.querySelector(".language-toggle").textContent = currentLang === 'en' ? "Español" : "English";
+  
+  elements.forEach(el => {
+    const text = el.textContent;
+    for (let key in translations[currentLang]) {
+      if (translations['en'][key] === text || translations['es'][key] === text) {
+        el.textContent = translations[currentLang][key];
+      }
+    }
+  });
+}
+</script>
 
-                <label for="year">Year:</label>
-                <input type="text" id="year" name="year" required>
-
-                <label for="mileage">Mileage:</label>
-                <input type="text" id="mileage" name="mileage" required>
-
-                <label for="condition">Condition:</label>
-                <input type="text" id="condition" name="condition" required>
-
-                <label for="location">Your City:</label>
-                <input type="text" id="location" name="location" required>
-
-                <label for="photos">Upload Photo (One Photo Only):</label>
-                <input type="file" id="photos" name="photos" accept="image/*" multiple>
-
-                <button type="submit">Submit Offer</button>
-            </form>
-        </section>
-
-        <section id="how-it-works">
-            <h2>How It Works</h2>
-            <ol>
-                <li>Fill out the form</li>
-                <li>Get a text or call with a cash offer</li>
-                <li>We pick up your car and pay you</li>
-            </ol>
-        </section>
-
-        <section id="why-choose-us">
-            <h2>Why Choose JMP?</h2>
-            <ul>
-                <li>Fast and Friendly Service</li>
-                <li>Free Pickup in Southern California</li>
-                <li>We Buy Running, Well-Maintained Vehicles</li>
-            </ul>
-        </section>
-    </main>
-
-    <!-- Confirmation Popup Script -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const form = document.querySelector("form");
-            form.addEventListener("submit", function () {
-                setTimeout(() => {
-                    alert("✅ Thank you! Your request was submitted. We'll contact you soon.");
-                }, 300);
-            });
-        });
-    </script>
 </body>
 </html>
